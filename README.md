@@ -8,13 +8,6 @@ privacy (RDP), reconstructs multi-stage attack timelines with a Causal Forensic
 Graph Network (CFGN), and schedules device participation with a Lyapunov
 drift-plus-penalty controller.
 
-> This repository is self-contained: it ships a synthetic multi-stage attack
-> generator so every script runs out of the box, plus drop-in loaders for
-> CIC-IoT-2023 and UNSW-NB15. No `torch-geometric` dependency — the graph
-> attention network is implemented natively.
-
-
-Python ≥ 3.9 and PyTorch ≥ 2.0 (CPU is fine for the synthetic demo).
 
 ## Quick start
 
