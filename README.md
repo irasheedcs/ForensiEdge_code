@@ -13,14 +13,6 @@ drift-plus-penalty controller.
 > CIC-IoT-2023 and UNSW-NB15. No `torch-geometric` dependency — the graph
 > attention network is implemented natively.
 
-## Installation
-
-```bash
-git clone https://github.com/<your-org>/ForensiEdge.git
-cd ForensiEdge
-python -m venv .venv && source .venv/bin/activate
-pip install -r requirements.txt
-```
 
 Python ≥ 3.9 and PyTorch ≥ 2.0 (CPU is fine for the synthetic demo).
 
@@ -86,19 +78,7 @@ The `.npz` must contain `x (M,1,L)`, `y (M,)`, `stage (M,)`, `tau (M,)`, and
 optionally `incident (M,)` (kill-chain instance id used to build sparse causal
 ground-truth graphs).
 
-## Notes on reproducibility
 
-* The synthetic generator is a **smoke test**: it exercises every code path and
-  reproduces the qualitative story (near-centralized detection, exact privacy
-  accounting, forensic metrics that degrade as ε shrinks). Absolute numbers on
-  the synthetic data are **not** the paper's headline figures — run on
-  CIC-IoT-2023 / UNSW-NB15 for those.
-* Detection uses on-device classification heads (no data leaves the device), so
-  detection F1 stays close to centralized across privacy levels; the DP noise is
-  applied to the *released* smashed embeddings and its cost therefore lands on
-  forensic reconstruction, matching the paper's design.
-* All hyperparameters default to the values in the paper (see
-  `forensiedge/config.py`); override any of them from the CLI.
 
 ## Citation
 
@@ -106,8 +86,8 @@ ground-truth graphs).
 @article{rasheed2026forensiedge,
   title   = {ForensiEdge: Privacy-Preserving Federated Split Learning for
              Network Forensics in Edge-Intelligent 6G-IoT},
-  author  = {Rasheed, Iftikhar and Mostafa, Hala and Alahmari, Saad and
-             AlTamimi, Saad Nasser},
+  author  = {Rasheed, Iftikhar and Thair Shakir Ahmed and Mostafa, Hala and Alahmari, Saad and
+             AlTamimi },
   journal = {IEEE Communications Letters},
   year    = {2026},
   note    = {Under review}
